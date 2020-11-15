@@ -13,9 +13,11 @@ module.exports = {
       filename: "static/runtime/remoteEntry.js",
       remotes: {
         app1: isServer
+        // note that this is only for local development and is relative to where the remote
+        // app is in you folder structure.
           ? path.resolve(
               __dirname,
-              "../app1/.next/server/static/runtime/remoteEntry.js"
+              "../Next-MF-app1/.next/server/static/runtime/remoteEntry.js"
             )
           : "app1", // for client, treat it as a global
       },
@@ -29,6 +31,8 @@ module.exports = {
     config.plugins.push(new MergeRuntime());
 
     if (!isServer) {
+      // TODO prefix with NEXT_PUBLIC for browser compatibility:
+        // https://nextjs.org/docs/basic-features/environment-variables#exposing-environment-variables-to-the-browser
       config.output.publicPath = process.env.PUBLIC_PATH;
     }
 
