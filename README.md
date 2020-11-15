@@ -1,3 +1,20 @@
+# NextJS MF App 2
+
+Create a `.env.local` in your main directory with these values:
+
+```
+# Local
+
+HOSTNAME = localhost
+PORT = 3001
+PROTOCOL = http
+NEXT_DIR = _next
+
+PUBLIC_PATH = $PROTOCOL://$HOSTNAME:$PORT/$NEXT_DIR/
+
+REMOTE_PATH = http://localhost:3000/_next/static/remoteEntryMerged.js
+```
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
