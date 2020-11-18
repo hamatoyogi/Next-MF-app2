@@ -11,7 +11,7 @@ class MyDocument extends Document {
     return (
       <Html>
         {patchSharing()}
-        <script src={ process.env.REMOTE_PATH } />
+        <script src={ process.env.NEXT_PUBLIC_REMOTE_PATH } />
         <Head />
         <body>
           <Main />
